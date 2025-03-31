@@ -1,12 +1,26 @@
-import { useState } from 'react'
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home'
+import { Layout } from './pages/Layout'
+import { Login } from './pages/Login'
+import { OrderOnline } from './pages/OrderOnline'
+import { Reservations } from './pages/Reservations'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-    <h1 class="text-red-600">Testing</h1>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="reservations" element={<Reservations />} />
+          <Route path="order" element={<OrderOnline />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
