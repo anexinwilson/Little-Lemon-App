@@ -1,5 +1,6 @@
 import { Outlet, Link,useNavigate, useLocation  } from 'react-router-dom';
 import logo from '../assets/images/Logo.svg';
+import { Footer } from '../components/Footer';
 
 export const Layout = (() => {
     const navigate = useNavigate();
@@ -65,8 +66,8 @@ export const Layout = (() => {
         <Outlet />
       </main>
 
-      <footer className="bg-gray-200 text-center p-4 mt-10 text-base text-gray-700">
-        © 2025 Little Lemon. All rights reserved.
+      <footer>
+        <Footer/>
       </footer>
     </>
   );
