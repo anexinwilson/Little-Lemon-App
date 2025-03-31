@@ -1,23 +1,72 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link,useNavigate, useLocation  } from 'react-router-dom';
+import logo from '../assets/images/Logo.svg';
 
 export const Layout = (() => {
+    const navigate = useNavigate();
+    const location = useLocation();
   return (
     <>
-      <nav className="bg-white shadow-md fixed top-0 w-full z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-center gap-8 font-semibold text-gray-800">
-          <Link to="/" className="hover:text-yellow-500">Home</Link>
-          <Link to="/reservations" className="hover:text-yellow-500">Reservations</Link>
-          <Link to="/order" className="hover:text-yellow-500">Order Online</Link>
-          <Link to="/login" className="hover:text-yellow-500">Login</Link>
+      <nav className="bg-white shadow shadow-gray-200 fixed w-full">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+          
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Little Lemon Logo" className="w-50" />
+          </Link>
+
+          <div className="flex gap-10 font-semibold text-grey-900 text-base">
+          <Link to="/">HOME</Link>
+          <Link to="/"
+            onClick={(e) => {
+                e.preventDefault();
+                if (location.pathname === '/') {
+                const el = document.querySelector('#menu');
+                if (el) {
+                    window.scrollTo({
+                    top: el.offsetTop - 80,
+                    behavior: 'smooth'
+                    });
+                }
+                } else {
+                navigate('/');
+                }
+            }}
+            >
+            MENU
+            </Link>
+
+            <Link to="/"
+            onClick={(e) => {
+                e.preventDefault();
+                if (location.pathname === '/') {
+                const el = document.querySelector('#about');
+                if (el) {
+                    window.scrollTo({
+                    top: el.offsetTop - 80,
+                    behavior: 'smooth'
+                    });
+                }
+                } else {
+                navigate('/');
+                }
+            }}
+            >
+            ABOUT
+            </Link>
+
+            <Link to="/reservations">RESERVATIONS</Link>
+            <Link to="/order">ORDER ONLINE</Link>
+            <Link to="/login">LOGIN</Link>
+          </div>
+
         </div>
       </nav>
 
-      <main className="pt-24 px-4 min-h-screen bg-gray-50">
+      <main className="pt-28 px-6 min-h-screen bg-gray-100">
         <Outlet />
       </main>
 
-      <footer className="bg-gray-200 text-center p-4 mt-10">
-        &copy; 2025 Little Lemon
+      <footer className="bg-gray-200 text-center p-4 mt-10 text-base text-gray-700">
+        © 2025 Little Lemon. All rights reserved.
       </footer>
     </>
   );
