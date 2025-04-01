@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-export const ReservationForm = (() => {
+export const ReservationForm = () => {
   const navigate = useNavigate();
-
   const formik = useFormik({
     initialValues: {
       resDate: "",
@@ -26,9 +25,8 @@ export const ReservationForm = (() => {
       occasion: Yup.string().required("Please select an occasion"),
     }),
   });
-
   return (
-    <main className="flex flex-col items-center  min-h-screen pt-10 bg-white px-4">
+    <main className="flex flex-col items-center min-h-screen pt-10 bg-white px-4">
       <h2 className="text-3xl font-bold text-center mb-6">Book a Table</h2>
       <form
         onSubmit={formik.handleSubmit}
@@ -46,7 +44,6 @@ export const ReservationForm = (() => {
             <p className="text-red-500 text-sm mt-1">{formik.errors.resDate}</p>
           )}
         </div>
-
         <div>
           <label htmlFor="res-time" className="block font-semibold mb-1">Choose time</label>
           <select
@@ -63,7 +60,6 @@ export const ReservationForm = (() => {
             <p className="text-red-500 text-sm mt-1">{formik.errors.resTime}</p>
           )}
         </div>
-
         <div>
           <label htmlFor="guests" className="block font-semibold mb-1">Number of guests</label>
           <input
@@ -79,7 +75,6 @@ export const ReservationForm = (() => {
             <p className="text-red-500 text-sm mt-1">{formik.errors.guests}</p>
           )}
         </div>
-
         <div>
           <label htmlFor="occasion" className="block font-semibold mb-1">Occasion</label>
           <select
@@ -95,7 +90,6 @@ export const ReservationForm = (() => {
             <p className="text-red-500 text-sm mt-1">{formik.errors.occasion}</p>
           )}
         </div>
-
         <input
           type="submit"
           value="Make Your Reservation"
@@ -112,4 +106,4 @@ export const ReservationForm = (() => {
       </form>
     </main>
   );
-});
+};
