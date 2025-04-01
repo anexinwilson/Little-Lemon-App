@@ -3,7 +3,7 @@ import { Menu } from '../components/Menu';
 import { Testimonials } from '../components/Testimonials';
 import { About } from '../components/About';
 
-export const Home = (() => {
+export const Home = () => {
   return (
     <>
       <HomeContent />
@@ -12,4 +12,4 @@ export const Home = (() => {
       <div id="about"><About/></div>
     </>
   );
-});
+};

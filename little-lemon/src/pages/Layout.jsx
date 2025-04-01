@@ -2,7 +2,7 @@ import { Outlet, Link,useNavigate, useLocation  } from 'react-router-dom';
 import logo from '../assets/images/Logo.svg';
 import { Footer } from '../components/Footer';
 
-export const Layout = (() => {
+export const Layout = () => {
     const navigate = useNavigate();
     const location = useLocation();
   return (
@@ -71,4 +71,4 @@ export const Layout = (() => {
       </footer>
     </>
   );
-});
+};

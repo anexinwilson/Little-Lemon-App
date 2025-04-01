@@ -2,7 +2,7 @@ import greekSalad from '../assets/images/greek salad.jpg';
 import bruchetta from '../assets/images/bruchetta.svg';
 import lemonDessert from '../assets/images/lemon dessert.jpg';
 
-export const Menu = (() => {
+export const Menu = () => {
   return (
     <section className="px-6 py-12 bg-white text-center">
       <div className="flex justify-between items-center max-w-6xl mx-auto mb-10">
@@ -78,4 +78,4 @@ export const Menu = (() => {
       </div>
     </section>
   );
-});
+};
