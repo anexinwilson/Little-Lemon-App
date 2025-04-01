@@ -62,16 +62,10 @@ export const Menu = () => {
               <p>Lemon Dessert</p>
               <p>$5.00</p>
             </div>
-            <p className="text-sm">
-              A light lemon cake with glaze, served with vanilla ice cream. A family recipe favorite!
-            </p>
+            <p className="text-sm">A light lemon cake with glaze, served with vanilla ice cream. A family recipe favorite!</p>
             <div className="flex justify-between items-center pt-2 text-sm font-semibold text-gray-600">
               <p>Order a delivery</p>
-              <img
-                src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delivery-1447237-1223498.png"
-                alt="delivery"
-                className="w-5 h-5"
-              />
+              <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delivery-1447237-1223498.png" alt="delivery" className="w-5 h-5"/>
             </div>
           </div>
         </div>
