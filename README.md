@@ -1,6 +1,8 @@
 # Little Lemon Restaurant App
 
-Little-Lemon is the capstone project developed for the Meta Coursera Front End Developer course 
+Little-Lemon is the capstone project developed for the Meta Coursera Front End Developer course. The website is live at :
+
+**[https://littlelemon-vancouver.netlify.app/](https://littlelemon-vancouver.netlify.app/)**
 
 ```bash
 git clone https://github.com/anexinwilson/little-lemon.git
