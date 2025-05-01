@@ -1,5 +1,5 @@
 import chefA from '../assets/images/Mario and Adrian A.jpg';
-import chefB from '../assets/images/Mario and Adrian B.jpg';
+import chefB from '../assets/images/Mario and Adrian b.jpg';
 
 export const About = () => {
   return (
