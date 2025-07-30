@@ -1,3 +1,4 @@
+/* Test suite for Layout component */
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
@@ -29,7 +30,7 @@ describe('Layout Component', () => {
     );
   };
 
-  it('should render the logo, navigation links, Outlet, and Footer', () => {
+  it('renders logo, navigation links, Outlet, and Footer', () => {
     renderWithRouter();
 
     const logoImg = screen.getByRole('img', { name: /little lemon logo/i });
@@ -49,7 +50,7 @@ describe('Layout Component', () => {
     expect(screen.getByTestId('footer-mock')).toBeInTheDocument();
   });
 
-  it('should scroll to #menu when MENU is clicked on the homepage', () => {
+  it('scrolls to #menu when MENU is clicked on homepage', () => {
     renderWithRouter('/'); 
     const menuLink = screen.getByRole('link', { name: 'MENU' });
 
@@ -59,7 +60,7 @@ describe('Layout Component', () => {
     expect(mockScrollTo).toHaveBeenCalledWith({ top: 500 - 80, behavior: 'smooth' });
   });
 
-  it('should scroll to #about when ABOUT is clicked on the homepage', () => {
+  it('scrolls to #about when ABOUT is clicked on homepage', () => {
     renderWithRouter('/'); 
     mockQuerySelector.mockReturnValue({ offsetTop: 1000 }); 
     const aboutLink = screen.getByRole('link', { name: 'ABOUT' });
@@ -70,7 +71,7 @@ describe('Layout Component', () => {
     expect(mockScrollTo).toHaveBeenCalledWith({ top: 1000 - 80, behavior: 'smooth' });
   });
 
-  it('should not scroll if element is not found', () => {
+  it('does not scroll if element is not found', () => {
     renderWithRouter('/');
     mockQuerySelector.mockReturnValue(null); 
     const menuLink = screen.getByRole('link', { name: 'MENU' });

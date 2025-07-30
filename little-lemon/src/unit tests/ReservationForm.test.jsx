@@ -1,3 +1,4 @@
+/* Test suite for ReservationForm component */
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, it, expect } from 'vitest';
@@ -12,7 +13,7 @@ describe('ReservationForm Component', () => {
     );
   };
 
-  it('renders all form fields and the submit button', () => {
+  it('renders all form fields and submit button', () => {
     renderForm();
     expect(screen.getByLabelText(/choose date/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/choose time/i)).toBeInTheDocument();
@@ -21,12 +22,12 @@ describe('ReservationForm Component', () => {
     expect(screen.getByRole('button', { name: /make your reservation/i })).toBeInTheDocument();
   });
 
-  it('disables the submit button initially', () => {
+  it('disables submit button initially', () => {
     renderForm();
     expect(screen.getByRole('button', { name: /make your reservation/i })).toBeDisabled();
   });
 
-  it('enables the submit button when all fields are filled', async () => {
+  it('enables submit button when all fields are filled', async () => {
     renderForm();
     const submitButton = screen.getByRole('button', { name: /make your reservation/i });
 

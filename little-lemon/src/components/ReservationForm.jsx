@@ -1,10 +1,12 @@
+/* ReservationForm component handling table booking with validation */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-export const ReservationForm = () => {
+export const ReservationForm = (props) => {
   const navigate = useNavigate();
+  /* Initializes form with validation: requires date, time, 1-10 guests, and occasion */
   const formik = useFormik({
     initialValues: {
       resDate: "",
@@ -13,6 +15,7 @@ export const ReservationForm = () => {
       occasion: "",
     },
     onSubmit: () => {
+      /* Redirects to confirmation page on submit */
       navigate("/confirmation");
     },
     validationSchema: Yup.object({
@@ -24,7 +27,12 @@ export const ReservationForm = () => {
         .required("Please enter the number of guests"),
       occasion: Yup.string().required("Please select an occasion"),
     }),
+    validateOnMount: true,
   });
+
+  const times = props?.state ?? ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+
+  /* Renders form with centered layout and validation feedback */
   return (
     <main className="flex flex-col items-center min-h-screen pt-10 bg-white px-4">
       <h2 className="text-3xl font-bold text-center mb-6">Book a Table</h2>
@@ -52,8 +60,8 @@ export const ReservationForm = () => {
             {...formik.getFieldProps("resTime")}
           >
             <option value="">Select</option>
-            {["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"].map((time) => (
-              <option key={time}>{time}</option>
+            {times.map((time) => (
+              <option key={time} value={time}>{time}</option>
             ))}
           </select>
           {formik.touched.resTime && formik.errors.resTime && (

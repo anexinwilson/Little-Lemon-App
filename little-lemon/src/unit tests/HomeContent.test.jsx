@@ -1,9 +1,10 @@
+/* Test suite for HomeContent component */
 import { render, screen, fireEvent } from '@testing-library/react';
 import { HomeContent } from '../components/HomeContent';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('HomeContent', () => {
-  test('renders HomeContent with correct sections and functionality', () => {
+  test('renders with correct sections and button functionality', () => {
     render(
       <BrowserRouter>
         <HomeContent />
@@ -19,7 +20,7 @@ describe('HomeContent', () => {
     const heading = screen.getByText(/little lemon/i);
     expect(heading).toBeInTheDocument();
 
-    const description = screen.getByText(/We are a family owned Mediteranian restaurant, focused on traditional recipes served with a modern twist./i);
+    const description = screen.getByText(/We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist./i);
     expect(description).toBeInTheDocument();
   });
 });

@@ -1,5 +1,7 @@
+/* Testimonials component displaying customer reviews with ratings */
 export const Testimonials = () => {
   const starIcon = "https://cdn-icons-png.flaticon.com/512/2107/2107957.png";
+  /* Array of testimonial data with name, rating, score, image, and comment */
   const testimonials = [
     {
       name: "Ava R.",
@@ -30,6 +32,7 @@ export const Testimonials = () => {
       comment: "Incredible food, zesty flavors, and a lovely vibe. Highly recommend the lemon risotto!"
     }
   ];
+  /* Generates star icons based on rating value */
   const getStars = (count) => {
     const stars = [];
     for (let i = 0; i < count; i++) {
@@ -37,6 +40,7 @@ export const Testimonials = () => {
     }
     return stars;
   };
+  /* Renders a flex layout for testimonial cards, wrapping on smaller screens */
   return (
     <section className="bg-yellow-100 px-6 py-16 text-center">
       <h2 className="text-3xl font-bold mb-10">Kind Words From Happy Customers!</h2>

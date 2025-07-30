@@ -1,3 +1,4 @@
+/* Test suite for Menu component */
 import { render, screen } from '@testing-library/react';
 import { Menu } from '../components/Menu';
 
@@ -6,7 +7,7 @@ describe('Menu Component', () => {
     render(<Menu />);
   });
 
-  it('renders the specials header', () => {
+  it('renders specials header', () => {
     expect(screen.getByText(/This Week’s Specials!/i)).toBeInTheDocument();
   });
 

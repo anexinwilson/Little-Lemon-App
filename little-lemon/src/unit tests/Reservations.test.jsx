@@ -1,8 +1,9 @@
+/* Test suite for Reservations component */
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Reservations } from '../pages/Reservations';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-test('renders the Reservations component and interacts with the reservation form', () => {
+test('renders Reservations and interacts with form', () => {
   render(
     <Router>
       <Reservations />

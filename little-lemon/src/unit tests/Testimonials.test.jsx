@@ -1,7 +1,8 @@
+/* Test suite for Testimonials component */
 import { render, screen } from '@testing-library/react';
 import { Testimonials } from '../components/Testimonials';
 
-test('renders the Testimonials component with customer reviews', () => {
+test('renders Testimonials with customer reviews', () => {
   render(<Testimonials />);
 
   const heading = screen.getByText(/Kind Words From Happy Customers!/i);
